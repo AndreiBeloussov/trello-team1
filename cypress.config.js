@@ -11,7 +11,7 @@ module.exports = defineConfig({
   env: {
     apiKey: 'Paste your api key here',
     apiToken: 'Paste you token here',
-    email: 'liroh61536@bitvoo.com',
-    password: 'Test4321!',
+    email: 'teamonecerebhub@gmail.com',
+    password: '170123teamone',
   }
 });

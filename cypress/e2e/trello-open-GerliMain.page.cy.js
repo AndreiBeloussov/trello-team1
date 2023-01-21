@@ -53,7 +53,7 @@ describe('Test on Trello board', () => {
         cy.get('[class="board-name-input js-board-name-input"]').type('Trying to change the name')
             // Pressing Enter (clicking outside of the board name field)
         cy.get('[class="board-header u-clearfix js-board-header"]').click()
-            // Asserting that the name is changed
+            // Asserting that the name is changed correctly
         cy.get('[class="board-name-input js-board-name-input"]').should('have.value','Trying to change the name')
             // Changing the name back
         cy.get('[class="board-header-btn mod-board-name inline-rename-board js-rename-board"]').click()

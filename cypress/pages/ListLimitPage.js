@@ -15,7 +15,6 @@ class ListLimitPage {
         this.archiveCardButton = '[class="button-link js-archive-card"]'
         this.deleteCardButton = '[class="button-link js-delete-card negate"]'
         this.confirmButton = '[class="js-confirm full nch-button nch-button--danger"]'
-        this.starIcon = '#content > div > div.board-main-content > div.board-header.u-clearfix.js-board-header > a > span'
 
     }
 

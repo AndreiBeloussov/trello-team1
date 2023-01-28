@@ -39,10 +39,6 @@ describe('Test on Trello board', () => {
     });
 
     it('Remove list limit and assert removing', () => {
-        const ListLimit = 2;  //it is possible to change the limit of the list, e.g from 2 to 5
-        const CardName2 = "2nd card added"; 
-        const CardName3 = "3rd card added"; 
-
         ListLimitPage.removeListLimit(); 
         ListLimitPage.assertListLimitBadgeNotVisible()
     });

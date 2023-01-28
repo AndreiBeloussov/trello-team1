@@ -1,7 +1,7 @@
 import BoardPage from "../pages/BoardPage";
 import Boards from "../pages/Boards";
 import LoginPage from "../pages/LoginPage";
-import star_unstar from "../pages/star_unstar";
+import star_unstar from "../pages/Andrei_star_unstar";
 
 describe('Test on Trello board', () => {
 

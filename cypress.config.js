@@ -8,10 +8,13 @@ module.exports = defineConfig({
   },
   defaultCommandTimeout: 15_000,
   chromeWebSecurity: false,
+  
   env: {
     apiKey: 'Paste your api key here',
     apiToken: 'Paste you token here',
     email: 'teamonecerebhub@gmail.com',
     password: '170123teamone',
   }
+
+
 });

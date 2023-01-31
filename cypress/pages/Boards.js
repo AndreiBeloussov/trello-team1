@@ -11,7 +11,7 @@ class Boards {
     boardsViewShouldBeVisible() {
         cy.get('.spinner').should('not.exist');
         cy.url().should('include', '/boards');
-        cy.contains(this.boardsMainTitle);
+        cy.contains(this.boardsMainTitle).should('be.visible');
     }
 
     boardUrlIsCorrect(url) {

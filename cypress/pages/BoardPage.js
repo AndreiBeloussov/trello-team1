@@ -1,6 +1,6 @@
 class BoardPage {
     constructor() {
-
+        this.boardsMainTitle = 'myKanbanBoard';
     }
 
     boardUrlIsCorrect(url) {

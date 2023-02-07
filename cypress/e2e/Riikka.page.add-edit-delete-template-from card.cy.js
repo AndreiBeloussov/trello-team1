@@ -22,19 +22,31 @@ describe('Test on Trello board', () => {
         BoardPage.boardUrlIsCorrect(myKanbanBoardUrl);
     });
 
-    //add new card from templete
-    it('Add new card from templete', () => {
-        //cy.get('[class="list-card js-member-droppable is-covered ui-droppable"]').eq(0).click();
-        //cy.get('[class="button-link js-convert-to-template"]').click();
-        //cy.get('[class="icon-md icon-close dialog-close-button js-close-window dialog-close-button--card-cover"]').click();
-
-        //edit templete
-        cy.get('[class="badge-icon icon-sm icon-template-card"]').click();
-        cy.get('[class="window-title"]').clear().type('Templete1');
-        cy.wait(3);
-        cy.get('[class="nch-button ml-4 hide-on-edit js-show-with-desc js-edit-desc js-edit-desc-button"]').click();
-        cy.get('[class="ak-editor-content-area less-margin css-96533n"]').clear().type('Templete text test');
+    it('Add card as a template', () => {
+        cy.get('[class="list-card js-member-droppable is-covered ui-droppable"]').eq(0).click();
+        cy.get('.js-convert-to-template').click();
+        cy.get('.js-close-window').click();
 
     });
 
+    it('Edit template', () => {
+        cy.get('[class="badge-icon icon-sm icon-template-card"]').click();
+        cy.get('.js-card-detail-title-input').clear().type('Templete1');
+        cy.get('.js-edit-desc-button').click();
+        cy.get('[class="ak-editor-content-area less-margin css-96533n"]').clear().type('Template text test');
+        cy.get('.js-close-window').click();
+    });
+
+    it('Create new card from template', () => {
+        cy.get('[class="badge-icon icon-sm icon-template-card"]').click();
+        cy.get('[data-testid="create-card-from-template-banner-button"]').click();
+        cy.get('[data-testid="card-title-textarea"]').clear().type('New Card from Template');
+    });
+
+    it('Delete template', () => {
+        cy.get('[class="badge-icon icon-sm icon-template-card"]').click();
+        cy.get('.js-delete-card').click();
+        //cy.get('.js-confirm').click();
+
+    });
 });

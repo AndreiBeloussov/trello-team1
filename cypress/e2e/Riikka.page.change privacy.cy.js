@@ -24,12 +24,11 @@ describe('Test on Trello board', () => {
 
     //change workspace visibility to Private and back
     it('Change visibility to Private and back to Workspace', () => {
-        cy.get('[id="permission-level"]')
-        cy.get('[class="board-header-btn-text"]').eq(0).click()
-        cy.get('[class="pop-over-header js-pop-over-header"]')
-        cy.get('[class="js-select"]').eq(0).click()
-        cy.get('[class="board-header-btn-text"]').eq(0).click()
-        cy.get('[class="pop-over-header js-pop-over-header"]')
-        cy.get('[class="js-select"]').eq(1).click()
+        cy.get('.js-change-vis').click();
+        cy.get('.js-select').contains('Private').click();
+
+        cy.get('.js-change-vis').click();
+        cy.get('.js-select').contains('Workspace').click();
+
     });
 });

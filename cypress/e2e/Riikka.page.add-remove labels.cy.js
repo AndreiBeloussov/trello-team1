@@ -24,29 +24,18 @@ describe('Test on Trello board', () => {
 
     //add and remove labels
     it('Add and remove labels', () => {
-        cy.get('[class="list-card js-member-droppable is-covered ui-droppable"]').eq(1).click();
-        cy.get('[class="button-link js-edit-labels"]').click();
-        //these comments are for me to try different approach one day
-        //cy.get('[type="checkbox"]').check(green);
-        //cy.get('[type="checkbox"]').check(blue);
-        cy.get('[class="dFag8JU1lt76jj"]').eq("2").click();
-        cy.get('[class="dFag8JU1lt76jj"]').eq("4").click();
-        //cy.get('[class="dFag8JU1lt76jj"]').contains("green", "blue").click();
-        //cy.get('[class="dFag8JU1lt76jj"]').eq(4).click();
-        //cy.get('input[value="Checkbox1"]').click();
-        //cy.get('[class="garr9YNBipBJcE QzF2IkOb12d6-2"]').click()
-        //cy.contains('[data-colour= "green"]').click();
-        //cy.contains('Blue').click()
-        //cy.get('[inputValue="checkbox"]').check('green', 'blue');
-        cy.get('[class="icon-md icon-close dialog-close-button js-close-window dialog-close-button--card-cover"]').click();
+        cy.get('.js-card-cover').eq(0).click();
+        cy.get('.js-sidebar-action-text').contains('Labels').click();
+        cy.get('.js-labels-list-item').eq("2").click();
+        cy.get('.js-labels-list-item').eq("4").click();
+        cy.get('.js-close-window').click();
 
         //remove labels
-        cy.get('[class="list-card js-member-droppable is-covered ui-droppable"]').eq(1).click();
-        cy.get('[class="button-link js-edit-labels"]').click();
-        cy.get('[class="dFag8JU1lt76jj"]').eq("2").click();
-        cy.get('[class="dFag8JU1lt76jj"]').eq("4").click();
-        cy.get('[class="icon-md icon-close dialog-close-button js-close-window dialog-close-button--card-cover"]').click();
-
+        cy.get('.js-card-cover').eq(0).click();
+        cy.get('.js-sidebar-action-text').contains('Labels').click();
+        cy.get('.js-labels-list-item').eq("2").click();
+        cy.get('.js-labels-list-item').eq("4").click();
+        cy.get('.js-close-window').click();
     });
 
 });

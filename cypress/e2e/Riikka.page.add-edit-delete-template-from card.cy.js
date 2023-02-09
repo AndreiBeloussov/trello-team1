@@ -23,30 +23,29 @@ describe('Test on Trello board', () => {
     });
 
     it('Add card as a template', () => {
-        cy.get('[class="list-card js-member-droppable is-covered ui-droppable"]').eq(0).click();
+        cy.get('.js-card-cover').eq(0).click();
         cy.get('.js-convert-to-template').click();
         cy.get('.js-close-window').click();
 
     });
 
     it('Edit template', () => {
-        cy.get('[class="badge-icon icon-sm icon-template-card"]').click();
-        cy.get('.js-card-detail-title-input').clear().type('Templete1');
-        cy.get('.js-edit-desc-button').click();
-        cy.get('[class="ak-editor-content-area less-margin css-96533n"]').clear().type('Template text test');
+        cy.get('.js-card-cover').eq(0).click();
+        cy.get('.js-card-detail-title-input').clear().type('Template1');
         cy.get('.js-close-window').click();
     });
 
     it('Create new card from template', () => {
-        cy.get('[class="badge-icon icon-sm icon-template-card"]').click();
+        cy.get('.js-card-cover').eq(0).click();
         cy.get('[data-testid="create-card-from-template-banner-button"]').click();
         cy.get('[data-testid="card-title-textarea"]').clear().type('New Card from Template');
+        cy.get('[data-testid="create-card-from-template-button"]').click()
     });
 
     it('Delete template', () => {
-        cy.get('[class="badge-icon icon-sm icon-template-card"]').click();
+        cy.get('.js-card-cover').eq(0).click();
         cy.get('.js-delete-card').click();
-        //cy.get('.js-confirm').click();
+        cy.get('.js-confirm').click();
 
     });
 });

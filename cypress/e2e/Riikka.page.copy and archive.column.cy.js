@@ -26,17 +26,17 @@ describe('Test on Trello board', () => {
     //copy list (column)
     it('Copy column', () => {
         //open ... ec extras menu
-        cy.get('[class="list-header-extras-menu dark-hover js-open-list-menu icon-sm icon-overflow-menu-horizontal"]').eq(1).click();
+        cy.get('.js-open-list-menu').eq(0).click();
         //copy
-        cy.get('[class="js-copy-list"]').click();
+        cy.get('.js-copy-list').click();
         //rename copied list
         cy.get('.pop-over-content textarea').type("Design2");
-        cy.get('input[value="Create list"]').click();
+        cy.get('.js-submit').click();
     });
 
     //archive copyed list (column)
     it('Archive list', () => {
-        cy.get('[class="list-header-extras-menu dark-hover js-open-list-menu icon-sm icon-overflow-menu-horizontal"]').eq(2).click();
-        cy.get('[class="js-close-list"]').click();
+        cy.get('.js-open-list-menu').eq(0).click();
+        cy.get('.js-close-list').click();
     });
 });

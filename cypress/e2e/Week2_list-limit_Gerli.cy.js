@@ -21,21 +21,24 @@ describe('Test on Trello board', () => {
     });
 
     it('Set list limit and assert limit reaching', () => {
-        const ListLimit = 2;  //it is possible to change the limit of the list, e.g from 2 to 5
-        const CardName2 = "2nd card added"; 
-        const CardName3 = "3rd card added"; 
+        let listLimit = 2;  //it is possible to change the limit of the list, e.g from 2 to 5
+        let cardName2 = "2nd card added"; 
+        let cardName3 = "3rd card added"; 
+        let cardList1 = "2";
+        let cardList2 = "4";
+        let backgroundColor = 'rgb(23, 43, 77)';
 
-        ListLimitPage.setListLimitTo2(ListLimit); 
-        ListLimitPage.assertListLimitBadge(ListLimit)
-        ListLimitPage.addCardAndTypeText(CardName2)
-        ListLimitPage.assertToDoList(CardName2)
-        ListLimitPage.addCardAndTypeText(CardName3)
-        ListLimitPage.assertToDoList(CardName3)
-        ListLimitPage.assertNumberOfCards()
-        ListLimitPage.assertBackgroundColor()
+        ListLimitPage.setListLimitTo2(listLimit); 
+        ListLimitPage.assertListLimitBadge(listLimit)
+        ListLimitPage.addCardAndTypeText(cardName2)
+        ListLimitPage.assertToDoList(cardName2)
+        ListLimitPage.addCardAndTypeText(cardName3)
+        ListLimitPage.assertToDoList(cardName3)
+        ListLimitPage.assertNumberOfCards(cardList2)
+        ListLimitPage.assertBackgroundColor(backgroundColor)
         ListLimitPage.deleteAddedCardFirst()
         ListLimitPage.deleteAddedCardSecond()
-        ListLimitPage.assertNumberOfCardsAfterDelete()
+        ListLimitPage.assertNumberOfCardsAfterDelete(cardList1)
     });
 
     it('Remove list limit and assert removing', () => {

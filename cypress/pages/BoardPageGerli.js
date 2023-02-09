@@ -1,10 +1,10 @@
-class ListLimitPage {
+class BoardPageGerli {
     constructor() {
-        this.boardThreeDotButton = '[class="show-sidebar-button-react-root"]';
-        this.changeBackground = '[class="board-menu-navigation-item mod-background"]';
-        this.selectionOfPhotos = '[class="board-backgrounds-section-tile board-backgrounds-photos-tile js-bg-photos"]';
-        this.selectionOfSuitableImage = '[class="_9yKH4uh+9RiTWV large"]';
-        this.closeBoardMenu = '[class="board-menu-header-close-button icon-lg icon-close js-hide-sidebar"]';         
+        this.boardThreeDotButton = '.show-sidebar-button-react-root';
+        this.changeBackground = '.js-fill-board-menu .js-change-background';
+        this.selectionOfPhotos = '.js-bg-photos';
+        this.selectionOfSuitableImage = '.board-background-select';
+        this.closeBoardMenu = '.js-hide-sidebar';         
     }
 
     changeBoardBackgrondPicture(PictureNumber) {
@@ -16,4 +16,4 @@ class ListLimitPage {
     }
     
 }   
-export default new ListLimitPage();
+export default new BoardPageGerli();

@@ -21,7 +21,7 @@ describe('Test on Trello board', () => {
     });
 
     it('Change board background picture', () => {
-        const PictureNumber = 12;
+        let PictureNumber = 0; //it is possible to change the number of picture from 0 to 29
 
         BoardPageGerli.changeBoardBackgrondPicture(PictureNumber); 
 

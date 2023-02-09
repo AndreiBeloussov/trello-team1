@@ -40,24 +40,24 @@ describe('Test on Trello board', () => {
             // Asserting that menu bar is not visible
         cy.get('[data-testid="workspace-navigation-expanded"]').should('not.be.visible')    
             // Opening menu bar
-        cy.get('[class="MUEWlgKsUxSosV"]').should('be.visible')
-        cy.get('[class="MUEWlgKsUxSosV"]').click()
+        cy.get('[data-testid="workspace-navigation-expand-button"]').should('be.visible')
+        cy.get('[data-testid="workspace-navigation-expand-button"]').click()
             // Asserting that menu bar is open again
         cy.get('[data-testid="workspace-navigation-expanded"]').should('be.visible')    
     });    
     
     it('Asserting that board name edited and changed it back successfully', () => {
             // Clicking on the board name
-        cy.get('[class="board-header-btn mod-board-name inline-rename-board js-rename-board"]').click()
+        cy.get('.js-rename-board').click()
             // Editing it
-        cy.get('[class="board-name-input js-board-name-input"]').type('Trying to change the name')
+        cy.get('.js-board-name-input').type('Trying to change the name')
             // Pressing Enter (clicking outside of the board name field)
-        cy.get('[class="board-header u-clearfix js-board-header"]').click()
+        cy.get('.js-board-header').click()
             // Asserting that the name is changed correctly
-        cy.get('[class="board-name-input js-board-name-input"]').should('have.value','Trying to change the name')
+        cy.get('.js-board-name-input').should('have.value','Trying to change the name')
             // Changing the name back
-        cy.get('[class="board-header-btn mod-board-name inline-rename-board js-rename-board"]').click()
-        cy.get('[class="board-name-input js-board-name-input"]').type('Team 1 board Gerli')
-        cy.get('[class="board-header u-clearfix js-board-header"]').click()
+        cy.get('.js-rename-board').click()
+        cy.get('.js-board-name-input').type('Team 1 board Gerli')
+        cy.get('.js-board-header').click()
     });
 });

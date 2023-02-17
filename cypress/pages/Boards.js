@@ -1,6 +1,6 @@
 class Boards {
     constructor() {
-        this.boardsMainTitle = 'Most popular templates';
+        this.boardsMainTitle = 'YOUR WORKSPACES';
     }
 
     openBoardByName(name) {
@@ -11,7 +11,7 @@ class Boards {
     boardsViewShouldBeVisible() {
         cy.get('.spinner').should('not.exist');
         cy.url().should('include', '/boards');
-        cy.contains(this.boardsMainTitle).should('be.visible');
+        cy.get('.boards-page-section-header-name').contains(this.boardsMainTitle).should('be.visible');
     }
 
     boardUrlIsCorrect(url) {

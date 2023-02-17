@@ -60,7 +60,7 @@ describe('Test on Trello board', () => {
        
     });
 
-    it.only('Assert that sorted', () => {
+    it('Assert that sorted', () => {
        
         cy.get('.js-list').eq(7).within(() => {
             cy.get('.js-member-droppable').should('have.length', 3);

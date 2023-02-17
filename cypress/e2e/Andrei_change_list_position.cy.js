@@ -32,7 +32,7 @@ describe('Test on Trello board', () => {
 
     //       });
   
-    it.only('Change list position', () => {
+    it('Change list position', () => {
         //Assert position before list moved
         cy.get(':nth-child(8) > .list').should('contain', 'My new list');
         //Move the list
